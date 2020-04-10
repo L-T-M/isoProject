@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/logo.svg</file>
+        <file>images/iso定制工具-24px.svg</file>
+        <file>images/iso定制工具-32px.svg</file>
+        <file>images/iso定制工具-16px.svg</file>
+        <file>images/iso定制工具-48px.svg</file>
+        <file>images/progress.svg</file>
+        <file>images/NO_active1.svg</file>
+        <file>images/NO_inactive1.svg</file>
+        <file>images/NO_inactive2.svg</file>
+        <file>images/NO_inactive3.svg</file>
+        <file>images/NO_inactive4.svg</file>
+        <file>images/NO_inactive5.svg</file>
+        <file>images/NO_inactive6.svg</file>
+        <file>images/NO_inactive7.svg</file>
+        <file>images/NO_inactive8.svg</file>
+        <file>images/iso定制工具-96px.svg</file>
+        <file>images/清除1.svg</file>
+    </qresource>
+</RCC>
