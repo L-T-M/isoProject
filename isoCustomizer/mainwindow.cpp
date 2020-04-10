@@ -20,7 +20,6 @@ MainWindow::MainWindow(DMainWindow *parent)
     , m_pPrepareOutput (new prepareOutput)
     , m_pCentralWidget (new QWidget)
 {
-    QVBoxLayout * MainLayout = new QVBoxLayout;
     settingsInit();
     titlebar()->setIcon(QIcon::fromTheme("iso定制工具-16px",QIcon(":/images/iso定制工具-24px.svg")));
     const QString str = "ISO定制工具";
@@ -28,6 +27,7 @@ MainWindow::MainWindow(DMainWindow *parent)
     this->statusBar()->setSizeGripEnabled(true);
 
     DWidget *pListView = new DWidget;
+     pListView->setMinimumHeight(600);
     //DWidget *pStackWidget = new DWidget;
 
     pListView->setStyleSheet("QWidget{background-color:White;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}");
@@ -36,6 +36,7 @@ MainWindow::MainWindow(DMainWindow *parent)
     QVBoxLayout *pVLayoutListView = new QVBoxLayout;
     pVLayoutListView->addSpacing(16);
     pVLayoutListView->addWidget(m_pDlistView);
+    //pVLayoutListView->addStretch();
     pListView->setLayout(pVLayoutListView);
 
     /*QPalette pal(m_pStackWidget->palette());
@@ -51,7 +52,6 @@ MainWindow::MainWindow(DMainWindow *parent)
     m_pHBoxLayout = new QHBoxLayout;
     m_pHBoxLayout->addWidget(pListView,3);
     m_pHBoxLayout->addWidget(m_pStackWidget,8);
-    MainLayout->addLayout(m_pHBoxLayout);
 
     /*QPalette pal(m_pDlistView->palette());
     pal.setColor(QPalette::Background, Qt::white);
@@ -119,7 +119,8 @@ MainWindow::MainWindow(DMainWindow *parent)
     m_pDlistView->setCurrentIndex(index);
     m_pStackWidget->setCurrentWidget(m_pChooseISO);
     connect(m_pDlistView,&DListView::clicked,this,&MainWindow::listViewItemClikedSlots,Qt::QueuedConnection);
-    m_pCentralWidget->setLayout(MainLayout);
+    m_pCentralWidget->setLayout(m_pHBoxLayout);
+    setCentralWidget(m_pCentralWidget);
 
 
     connect(m_pChooseISO,&ChooseISO::clikedNext,this,&MainWindow::signalClikedNextSlots,Qt::QueuedConnection);

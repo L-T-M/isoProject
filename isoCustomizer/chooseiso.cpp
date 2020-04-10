@@ -43,6 +43,7 @@ ChooseISO::ChooseISO(QWidget *parent)
     connect(m_pFileChooseEdit,&DFileChooserEdit::cursorPositionChanged,this,&ChooseISO::finishChooseFile,Qt::QueuedConnection);
     connect(m_pButton,&DPushButton::clicked,this,&ChooseISO::clikedButton,Qt::QueuedConnection);
 
+
     p_MainLayout->addLayout(pHBoxLayout);
 
 }

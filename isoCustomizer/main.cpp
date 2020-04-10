@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     Q_UNUSED(as)
 
     MainWindow w;
-    w.setFixedSize(807,604);
+    w.setFixedSize(800,600);
     w.show();
 
     Dtk::Widget::moveToCenter(&w);
